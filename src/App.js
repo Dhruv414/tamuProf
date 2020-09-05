@@ -5,7 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "shards-ui/dist/css/shards.min.css";
 import Home from './pages/home';
 import TopNav from './components/topNav';
-
+import Course from './pages/course';
 
 import {
   BrowserRouter as Router,
@@ -18,16 +18,16 @@ import {
 
 
 
+
 function App() {
   var path = window.location.pathname;
   const history = useHistory();
+  const [search,setSearch] = useState("");
+  const handleChange = (e) => {
+    setSearch(e.target.value);
+    console.log(search);
+  }
   const handleNav = (e) => {
-    e.addEventListener("keyup", function(event) {
-      if (event.keyCode == 13) {
-        event.preventDefault();
-        document.getElementByID("search").click();
-      }
-    })
     console.log("click ", e);
     history.push("/" + e.key);
   };
@@ -40,11 +40,11 @@ function App() {
         onMouseOver={() => { setVisible(true) }}
         onMouseOut={() => setVisible(false)}
       >
-        <TopNav handleNav={handleNav} state={path} />
+        <TopNav handleNav={handleNav} handleChange={handleChange} state={path} />
         <div className="switcher" style={{height:"100%" , overflow: `${scrollerVisible ? 'auto' : 'hidden'}`}}>
           <Switch >
             <Route exact path="/home" component={(Home)}></Route>
-            
+            <Route exact path="/course" component={(Course)}></Route>
             <Route exact path="/">
               <Redirect to="/home" />
             </Route>

@@ -11,19 +11,20 @@
   
   .header-text {
     position: absolute;
-    top: 50%;
-    left: 30%;
+    top: 40%;
+    left: 50%;
     transform: translate(-50%, -50%);
+    justify-content: center;
     
   }
   
   .header-h1 {
-      text-align: left;
+      
       color:white;
   }
   
   .header-p {
-      text-align: left;
+      
       color: white;
       font-size: 20px;
   }
