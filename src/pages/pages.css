@@ -1,0 +1,34 @@
+.side-nav {
+    padding-right: 1em;
+    height: 100vh;
+  }
+  
+  .header-container {
+    position: relative;
+    text-align: center;
+    color: white;
+  }
+  
+  .header-text {
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    
+  }
+  
+  .header-h1 {
+      text-align: left;
+      color:white;
+  }
+  
+  .header-p {
+      text-align: left;
+      color: white;
+      font-size: 20px;
+  }
+  
+  .content-wrapper {
+      
+      height: 500px;
+  }
